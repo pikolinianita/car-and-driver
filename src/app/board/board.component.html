@@ -1,0 +1,24 @@
+<p>board works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col"><app-field [data] = "{letter: 'a', displayName: 'bbb', pictureLink: 'some'}"></app-field></div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div>
+</div>
+
+<div class="container g-0 px-0" [ngStyle]="{'width': width + 'px'}">
+    <div class="row g-0 px-0"  *ngFor="let row of boardCopy, let rowIndex = index">
+      <div class="col g-0 px-0"  *ngFor="let tile of row, let colIndex = index">
+        <app-field [data]="tile" (click)="onTileClicked(rowIndex, colIndex)"></app-field>
+      </div>
+    </div>
+  </div>
+
+  
+  <!---style="width:192px !important;"-->
